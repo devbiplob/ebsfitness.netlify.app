@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EBS Fitness Club - Transform Your Body</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#CCFF00', // Electric Neon Lime
+                        primaryDark: '#a3cc00',
+                        darkBg: '#0B0C10',
+                        cardBg: '#1F2833',
+                        lightGray: '#C5C6C7'
+                    },
+                    fontFamily: {
+                        heading: ['Montserrat', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0B0C10;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .text-glow {
+            text-shadow: 0 0 15px rgba(204, 255, 0, 0.6);
+        }
+        .box-glow {
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
+        }
+        .box-glow-hover:hover {
+            box-shadow: 0 0 30px rgba(204, 255, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black">
+
+    <!-- HEADER / NAVIGATION -->
+    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-darkBg/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <i class="fa-solid fa-dumbbell text-primary text-3xl transform group-hover:rotate-45 transition-transform duration-300"></i>
+                <span class="text-2xl font-black tracking-wider text-white">EBS <span class="text-primary">FITNESS</span></span>
+            </a>
+
+            <!-- Desktop Nav Items -->
+            <nav class="hidden md:flex items-center space-x-8 font-semibold text-sm tracking-wide">
+                <a href="#home" class="hover:text-primary transition-colors duration-200">HOME</a>
+                <a href="#about" class="hover:text-primary transition-colors duration-200">ABOUT US</a>
+                <a href="#classes" class="hover:text-primary transition-colors duration-200">CLASSES</a>
+                <a href="#bmi" class="hover:text-primary transition-colors duration-200">BMI CALCULATOR</a>
+                <a href="#pricing" class="hover:text-primary transition-colors duration-200">PRICING</a>
+                <a href="#contact" class="hover:text-primary transition-colors duration-200">CONTACT</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#pricing" class="bg-primary text-black font-extrabold px-6 py-2.5 rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary/20">JOIN NOW</a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cardBg border-b border-gray-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-link block py-2 font-semibold hover:text-primary">HOME</a>
+            <a href="#about" class="mobile-link block py-2 font-semibold hover:text-primary">ABOUT US</a>
+            <a href="#classes" class="mobile-link block py-2 font-semibold hover:text-primary">CLASSES</a>
+            <a href="#bmi" class="mobile-link block py-2 font-semibold hover:text-primary">BMI CALCULATOR</a>
+            <a href="#pricing" class="mobile-link block py-2 font-semibold hover:text-primary">PRICING</a>
+            <a href="#contact" class="mobile-link block py-2 font-semibold hover:text-primary">CONTACT</a>
+            <a href="#pricing" class="mobile-link inline-block w-full text-center bg-primary text-black font-bold py-3 rounded-md mt-2">JOIN NOW</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-screen flex items-center pt-20 bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(11, 12, 16, 0.95), rgba(11, 12, 16, 0.6)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full grid md:grid-cols-2 items-center gap-12">
+            <div>
+                <span class="inline-block bg-primary/20 text-primary font-bold px-4 py-1.5 rounded-full text-sm tracking-wider mb-4 border border-primary/30">
+                    <i class="fa-solid fa-bolt mr-2"></i>NO PAIN NO GAIN
+                </span>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase leading-tight tracking-tight mb-6">
+                    BUILD YOUR <span class="text-primary text-glow">ULTIMATE</span> BODY
+                </h1>
+                <p class="text-lightGray text-lg sm:text-xl mb-8 max-w-lg">
+                    Transform your physique, health, and mindset with world-class trainers, state-of-the-art equipment, and elite fitness programs at EBS Fitness Club.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#pricing" class="bg-primary text-black font-black px-8 py-4 rounded-md text-center hover:bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-primary/30">
+                        GET STARTED NOW <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#classes" class="border-2 border-white text-white font-bold px-8 py-4 rounded-md text-center hover:border-primary hover:text-primary transition-all duration-300">
+                        EXPLORE CLASSES
+                    </a>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-800 text-center sm:text-left">
+                    <div>
+                        <h3 class="text-3xl font-black text-primary">500+</h3>
+                        <p class="text-xs text-gray-400 font-semibold uppercase">Active Members</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-black text-primary">15+</h3>
+                        <p class="text-xs text-gray-400 font-semibold uppercase">Expert Coaches</p>
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-black text-primary">50+</h3>
+                        <p class="text-xs text-gray-400 font-semibold uppercase">Modern Equipment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 bg-darkBg border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80" alt="EBS Gym Training" class="rounded-xl shadow-2xl z-10 relative w-full object-cover h-[500px]">
+                    <div class="absolute -bottom-6 -right-6 w-2/3 h-2/3 bg-primary/20 rounded-xl -z-0 border border-primary/30 hidden sm:block"></div>
+                    <div class="absolute -top-6 -left-6 bg-cardBg p-6 rounded-xl border border-gray-800 shadow-2xl hidden sm:block">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-award text-4xl text-primary"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">#1 Rated Gym</h4>
+                                <p class="text-xs text-gray-400">In the region for 3 consecutive years</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span class="text-primary font-bold tracking-widest text-sm uppercase">WHO WE ARE</span>
+                    <h2 class="text-3xl sm:text-5xl font-black mt-2 mb-6 uppercase">WHY CHOOSE EBS FITNESS CLUB?</h2>
+                    <p class="text-lightGray mb-6 leading-relaxed">
+                        At EBS Fitness Club, we believe fitness is not just a routine—it's a lifestyle. We offer an unparalleled workout atmosphere with high-tech machinery, personalized training, and a supportive community.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-cardBg p-3 rounded-lg text-primary border border-gray-800">
+                                <i class="fa-solid fa-dumbbell text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Modern High-Tech Gym Gear</h4>
+                                <p class="text-sm text-gray-400">Train with elite biomechanically designed machines for optimal gains.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-cardBg p-3 rounded-lg text-primary border border-gray-800">
+                                <i class="fa-solid fa-user-ninja text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Certified Personal Trainers</h4>
+                                <p class="text-sm text-gray-400">Get customized workout routines and direct guidance from certified pros.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-cardBg p-3 rounded-lg text-primary border border-gray-800">
+                                <i class="fa-solid fa-heart-pulse text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-white">Nutrition & Diet Support</h4>
+                                <p class="text-sm text-gray-400">Tailored meal plans to complement your physical training perfectly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLASSES SECTION -->
+    <section id="classes" class="py-24 bg-cardBg/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase">OUR OFFERINGS</span>
+                <h2 class="text-3xl sm:text-5xl font-black mt-2 uppercase">SPECIALIZED FITNESS CLASSES</h2>
+                <p class="text-lightGray mt-4">Whatever your goal—muscle building, fat loss, or flexibility—we have a class crafted for you.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Class 1 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:-translate-y-2 box-glow-hover group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80" alt="Bodybuilding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-primary text-black font-bold text-xs px-3 py-1 rounded-full uppercase">POWER</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Heavy Bodybuilding</h3>
+                        <p class="text-sm text-gray-400 mb-4">Focus on compound movements and progressive overload to build serious muscle mass.</p>
+                        <div class="flex justify-between items-center text-xs text-gray-400 pt-4 border-t border-gray-800">
+                            <span><i class="fa-regular fa-clock text-primary mr-1"></i> 60 Mins</span>
+                            <span><i class="fa-solid fa-fire text-primary mr-1"></i> High Intensity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class 2 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:-translate-y-2 box-glow-hover group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80" alt="Cardio & HIIT" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-primary text-black font-bold text-xs px-3 py-1 rounded-full uppercase">CARDIO</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">HIIT & Fat Burn</h3>
+                        <p class="text-sm text-gray-400 mb-4">High-intensity interval training designed to maximize calorie burn and endurance.</p>
+                        <div class="flex justify-between items-center text-xs text-gray-400 pt-4 border-t border-gray-800">
+                            <span><i class="fa-regular fa-clock text-primary mr-1"></i> 45 Mins</span>
+                            <span><i class="fa-solid fa-fire text-primary mr-1"></i> Extreme Burn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class 3 -->
+                <div class="bg-cardBg rounded-xl overflow-hidden border border-gray-800 transition-all duration-300 hover:-translate-y-2 box-glow-hover group">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80" alt="Yoga & Mobility" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-primary text-black font-bold text-xs px-3 py-1 rounded-full uppercase">FLEXIBILITY</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-primary transition-colors">Yoga & Mobility</h3>
+                        <p class="text-sm text-gray-400 mb-4">Enhance joint health, core stability, and overall flexibility while reducing stress.</p>
+                        <div class="flex justify-between items-center text-xs text-gray-400 pt-4 border-t border-gray-800">
+                            <span><i class="fa-regular fa-clock text-primary mr-1"></i> 60 Mins</span>
+                            <span><i class="fa-solid fa-leaf text-primary mr-1"></i> Low Stress</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BMI CALCULATOR SECTION -->
+    <section id="bmi" class="py-24 bg-darkBg border-t border-b border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-primary font-bold tracking-widest text-sm uppercase">TRACK YOUR HEALTH</span>
+                    <h2 class="text-3xl sm:text-5xl font-black mt-2 mb-6 uppercase">CALCULATE YOUR BMI</h2>
+                    <p class="text-lightGray mb-6">
+                        Body Mass Index (BMI) is a simple calculation using a person's height and weight. Calculate yours now to see if you are in a healthy range!
+                    </p>
+                    <div class="bg-cardBg p-6 rounded-xl border border-gray-800">
+                        <table class="w-full text-left text-sm text-gray-400">
+                            <thead>
+                                <tr class="border-b border-gray-700 text-primary font-bold">
+                                    <th class="pb-2">BMI Category</th>
+                                    <th class="pb-2">Range</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-800">
+                                <tr><td class="py-2">Underweight</td><td>&lt; 18.5</td></tr>
+                                <tr><td class="py-2">Normal Weight</td><td>18.5 – 24.9</td></tr>
+                                <tr><td class="py-2">Overweight</td><td>25.0 – 29.9</td></tr>
+                                <tr><td class="py-2">Obesity</td><td>30.0 or Higher</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Calculator Form -->
+                <div class="bg-cardBg p-8 rounded-xl border border-gray-800 box-glow">
+                    <form id="bmi-form" class="space-y-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Weight (kg)</label>
+                                <input type="number" id="bmi-weight" placeholder="e.g. 70" required class="w-full bg-darkBg border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-primary">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-2">Height (cm)</label>
+                                <input type="number" id="bmi-height" placeholder="e.g. 175" required class="w-full bg-darkBg border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-primary">
+                            </div>
+                        </div>
+                        <button type="button" id="calc-bmi-btn" class="w-full bg-primary text-black font-extrabold py-3.5 rounded-lg hover:bg-white transition-all duration-300">CALCULATE NOW</button>
+                    </form>
+
+                    <!-- Result Display -->
+                    <div id="bmi-result-box" class="hidden mt-6 p-4 rounded-lg bg-darkBg border border-gray-700 text-center">
+                        <p class="text-sm text-gray-400">Your BMI Score</p>
+                        <h3 id="bmi-val" class="text-4xl font-black text-primary my-1">0.0</h3>
+                        <p id="bmi-status" class="font-bold text-lg text-white">Normal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING PLAN SECTION -->
+    <section id="pricing" class="py-24 bg-cardBg/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase">MEMBERSHIP PACKAGES</span>
+                <h2 class="text-3xl sm:text-5xl font-black mt-2 uppercase">CHOOSE YOUR FITNESS PLAN</h2>
+                <p class="text-lightGray mt-4">Transparent pricing with no hidden fees. Select the plan that matches your goals.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Plan 1 -->
+                <div class="bg-cardBg p-8 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-gray-600 transition-all">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">BASIC PLAN</h3>
+                        <p class="text-xs text-gray-400 mb-6">Perfect for beginners and casual workouts.</p>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-black text-primary">৳2,000</span>
+                            <span class="text-gray-400 text-sm ml-2">/ month</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Access to Gym Equipment</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Locker & Shower Facility</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> 1 Free Orientation Session</li>
+                            <li class="flex items-center text-gray-600"><i class="fa-solid fa-xmark mr-3"></i> Personal Trainer Support</li>
+                            <li class="flex items-center text-gray-600"><i class="fa-solid fa-xmark mr-3"></i> Diet & Meal Plans</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full bg-transparent border-2 border-primary text-primary font-bold py-3 rounded-lg text-center hover:bg-primary hover:text-black transition-all">CHOOSE PLAN</a>
+                </div>
+
+                <!-- Plan 2 (Popular) -->
+                <div class="bg-cardBg p-8 rounded-xl border-2 border-primary flex flex-col justify-between relative shadow-2xl box-glow transform md:-translate-y-4">
+                    <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-black text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider">MOST POPULAR</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">PRO STANDARD</h3>
+                        <p class="text-xs text-gray-400 mb-6">Ideal for dedicated body transformation.</p>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-black text-primary">৳4,500</span>
+                            <span class="text-gray-400 text-sm ml-2">/ 3 months</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Full Gym & Fitness Access</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Group Fitness Classes</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Free Customized Diet Plan</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Weekly Progress Tracking</li>
+                            <li class="flex items-center text-gray-600"><i class="fa-solid fa-xmark mr-3"></i> 1-on-1 Personal Trainer</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full bg-primary text-black font-extrabold py-3.5 rounded-lg text-center hover:bg-white transition-all">JOIN PRO PLAN</a>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="bg-cardBg p-8 rounded-xl border border-gray-800 flex flex-col justify-between hover:border-gray-600 transition-all">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">VIP UNLIMITED</h3>
+                        <p class="text-xs text-gray-400 mb-6">For those who want ultimate result & support.</p>
+                        <div class="flex items-baseline mb-6">
+                            <span class="text-4xl font-black text-primary">৳12,000</span>
+                            <span class="text-gray-400 text-sm ml-2">/ 6 months</span>
+                        </div>
+                        <ul class="space-y-4 text-sm text-gray-300 mb-8">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> 24/7 VIP Gym Access</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Dedicated Personal Coach</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Customized Nutrition Plan</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Free Supplement Guide</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-primary mr-3"></i> Guest Passes Allowed (2/mo)</li>
+                        </ul>
+                    </div>
+                    <a href="#contact" class="w-full bg-transparent border-2 border-primary text-primary font-bold py-3 rounded-lg text-center hover:bg-primary hover:text-black transition-all">GO VIP</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-darkBg border-t border-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <span class="text-primary font-bold tracking-widest text-sm uppercase">REACH OUT</span>
+                    <h2 class="text-3xl sm:text-5xl font-black mt-2 mb-6 uppercase">JOIN EBS FITNESS TODAY</h2>
+                    <p class="text-lightGray mb-8">Ready to step up your fitness game? Visit us or drop a message to schedule your free 1-day trial pass.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-cardBg rounded-full flex items-center justify-center text-primary text-xl border border-gray-800">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Our Location</h4>
+                                <p class="text-sm text-gray-400">Level 4, EBS Tower, Main Road, Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-cardBg rounded-full flex items-center justify-center text-primary text-xl border border-gray-800">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Call Us</h4>
+                                <p class="text-sm text-gray-400">+880 1700-000000</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-cardBg rounded-full flex items-center justify-center text-primary text-xl border border-gray-800">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Email Us</h4>
+                                <p class="text-sm text-gray-400">info@ebsfitnessclub.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-cardBg p-8 rounded-xl border border-gray-800">
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold mb-1">Your Full Name</label>
+                            <input type="text" required placeholder="John Doe" class="w-full bg-darkBg border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-1">Phone Number</label>
+                            <input type="tel" required placeholder="+8801700..." class="w-full bg-darkBg border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-1">Preferred Membership Plan</label>
+                            <select class="w-full bg-darkBg border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-primary">
+                                <option>Basic Plan (৳2,000 / mo)</option>
+                                <option>Pro Standard (৳4,500 / 3 mo)</option>
+                                <option>VIP Unlimited (৳12,000 / 6 mo)</option>
+                                <option>Free 1-Day Trial Pass</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-1">Message (Optional)</label>
+                            <textarea rows="3" placeholder="Tell us about your fitness goal..." class="w-full bg-darkBg border border-gray-700 rounded-lg p-3 text-white focus:outline-none focus:border-primary"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-black font-extrabold py-3.5 rounded-lg hover:bg-white transition-all duration-300">SUBMIT REGISTRATION</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-8 border-t border-gray-900 text-center sm:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-sm text-gray-500">&copy; 2026 EBS Fitness Club. All Rights Reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors text-lg"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors text-lg"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-primary transition-colors text-lg"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // BMI Calculation Script
+        document.getElementById('calc-bmi-btn').addEventListener('click', function() {
+            const weight = parseFloat(document.getElementById('bmi-weight').value);
+            const height = parseFloat(document.getElementById('bmi-height').value) / 100; // cm to meters
+
+            if(weight > 0 && height > 0) {
+                const bmi = (weight / (height * height)).toFixed(1);
+                const resultBox = document.getElementById('bmi-result-box');
+                const bmiVal = document.getElementById('bmi-val');
+                const bmiStatus = document.getElementById('bmi-status');
+
+                bmiVal.innerText = bmi;
+                resultBox.classList.remove('hidden');
+
+                if (bmi < 18.5) {
+                    bmiStatus.innerText = 'Underweight';
+                    bmiStatus.className = 'font-bold text-lg text-yellow-400';
+                } else if (bmi >= 18.5 && bmi <= 24.9) {
+                    bmiStatus.innerText = 'Normal / Healthy Weight';
+                    bmiStatus.className = 'font-bold text-lg text-primary';
+                } else if (bmi >= 25 && bmi <= 29.9) {
+                    bmiStatus.innerText = 'Overweight';
+                    bmiStatus.className = 'font-bold text-lg text-orange-400';
+                } else {
+                    bmiStatus.innerText = 'Obese';
+                    bmiStatus.className = 'font-bold text-lg text-red-500';
+                }
+            } else {
+                alert('Please enter valid weight and height numbers.');
+            }
+        });
+
+        // Contact Form Submission Mock
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for registering, Sir! Our EBS team will contact you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
